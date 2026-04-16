@@ -1,4 +1,93 @@
+.sc1c {
+  display: flex;
+  position: relative;
+  top: 50px;
+  left: -75px;
+}
+.sc1c h2 {
+  color: #2E2520;
+}
+.sc1c h2:first-child {
+  position: relative;
+  font-weight: 500;
+  font-size: 32px;
+  left: 650px;
+}
+.sc1c {
+  gap: 32px;
+}
+.sc1c .sc1thing {
+  position: relative;
+  top: 54px;
+  width: 395px;
+  height: 610px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFBFB;
+  border-radius: 25px;
+}
+.sc1c .sc1thing img {
+  position: absolute;
+  left: 48px;
+  top: 297px;
+}
+.sc1c .sc1thing h2 {
+  position: relative;
+  top: 28px;
+  align-self: center;
+  font-size: 20px;
+  font-weight: 600;
+  left: 0;
+}
+.sc1c .s1cin {
+  position: relative;
+  top: 40px;
+  display: grid;
+  row-gap: 16px;
+}
+.sc1c .sc1thingig {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  left: 8px;
+}
+.sc1c .sc1thingig img {
+  width: 24px;
+  height: 24px;
+  position: static;
+}
+.sc1c .sc1thingig p {
+  font-size: 18px;
+  color: #3C322D;
+  width: 339px;
+}
+.sc1c button {
+  width: 145px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #F3848C;
+  border: none;
+  border-radius: 25px;
+  position: relative;
+  left: 125px;
+  text-transform: capitalize;
+}
+.sc1c .sc1thing button:nth-of-type(1) {
+  top: 10000px;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(180.11deg, #E5E2E3 10.73%, #FDFEFE 38.02%, #E5E2E3 71.11%, #FDFEFE 99.91%);
+}
+
+h2 {
+  font-family: "montserrat alternates", sans-serif;
 }
