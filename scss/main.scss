@@ -1,4 +1,5 @@
 @import './mixins';
+@import './components/adaptive';
 @import './components/body';
 @import './components/footer';
 
@@ -15,9 +16,7 @@ html::-webkit-scrollbar {
 }
 
 body {
-    //background: linear-gradient(180.11deg, #E5E2E3 10.73%, #FDFEFE 38.02%, #E5E2E3 71.11%, #FDFEFE 99.91%);
-    background-color: #000;
-    height: 5081px;
+    background: linear-gradient(180.11deg, #E5E2E3 10.73%, #FDFEFE 38.02%, #E5E2E3 71.11%, #FDFEFE 99.91%);
 }
 
 h2 {

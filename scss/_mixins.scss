@@ -1,0 +1,13 @@
+@mixin h2thing ($fs: 32px, $fw: 500, $c: #2E2520, $tt: capitalize, $ta: center) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $c;
+    text-transform: $tt;
+    text-align: $ta;
+}
+
+@mixin pthing ($fs: 18px, $fw: 400, $c: #2E2520) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $c;
+}

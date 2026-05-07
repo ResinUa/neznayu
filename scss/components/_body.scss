@@ -1,10 +1,6 @@
 .sc1 {
     h2 {
-        color: #2e2520;
-        font-weight: 500;
-        font-size: 32px;
-        text-align: center;
-        text-transform: capitalize;
+        @include h2thing($tt: none);
     }
 
     .sc1c {
@@ -53,6 +49,12 @@
                 text-transform: capitalize;
             }
 
+            button:hover {
+                background-color: white;
+                color: #f3848c;
+                border: 1px #f3848c solid;
+            }
+
             &:nth-child(1) button {
                 top: 330px;
             }
@@ -91,8 +93,7 @@
             }
 
             p {
-                font-size: 18px;
-                color: #3c322d;
+                @include pthing();
                 width: 339px;
                 position: relative;
             }
@@ -109,10 +110,7 @@
         align-items: center;
 
         h2 {
-            text-transform: capitalize;
-            font-weight: 500;
-            font-size: 32px;
-            color: #2E2520;
+            @include h2thing();
         }
     }
 
@@ -146,19 +144,17 @@
         }
     }
 
-    .sc2p:nth-child(1),
-    .sc2p:nth-child(2),
-    .sc2p:nth-child(3) {
+    .active {
         display: flex;
     }
 
-    #guy2 {
-        width: 394px;
-        height: 394px;
+    .activeguy {
+        width: 394px !important;
+        height: 394px !important;
     }
 
-    #star2 {
-        left: 130px;
+    .activestar {
+        left: 130px !important;
     }
 
     .sc2pc {
@@ -169,30 +165,26 @@
             position: relative;
             top: 24px;
             text-transform: capitalize;
-            font-weight: 500;
-            font-size: 16px;
-            color: #2E2520;
+            @include pthing($fs: 16px, $fw: 500);
         }
     }
 
-    .sc2pc2 {
+    .activething {
         top: 143px;
     }
 
-    #text2 {
-        display: block;
+    .activetext {
+        display: block !important;
     }
 
     .sc2text {
         display: none;
-        font-size: 18px;
-        font-weight: 400;
-        color: #2E2520;
         width: 1248px;
         text-align: center;
         position: absolute;
         top: 650px;
         left: -115px;
+        @include pthing();
     }
 
     .sc2button {
@@ -202,11 +194,11 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+
         p {
-            color: #000;
-            font-size: 16px;
-            font-weight: 400;
+            @include pthing($fs: 16px, $c: #000);
         }
+
         button {
             width: 35px;
             height: 2px;
@@ -221,50 +213,315 @@
 .sc3 {
     position: relative;
     top: 500px;
+
     .sc3c {
-        h2 {
-            text-align: center;
-            color: #2E2520;
-            font-size: 32px;
-            font-weight: 500;
-            text-transform: capitalize;
-        }
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    .sc3thing {
-        display: flex;
-        position: relative;
-        top: 28px;
-        background-color: #F6F7F7;
-        border-radius: 10px;
-        width: 1034px;
-        height: 246px;
-        gap: 28px;
-        img:first-child {
-            width: 200px;
-            height: 133px;
+        z-index: -1;
+
+        h2 {
+            @include h2thing();
+        }
+
+        .sc3thing {
+            display: flex;
             position: relative;
-            top: 97px;
-            left: 15px;
-        }
-        p:first-of-type {
-            width: 127px;
-            color: red;
-        }
-        hr {
-            width: 1px;
-            height: 166px;
-            background-color: #2E2520;
-            border: 1px solid #2E2520;
-            align-self: center;
+            top: 28px;
+            background-color: #f6f7f7;
+            border-radius: 10px;
+            width: 1034px;
+            height: 246px;
+            z-index: 0;
+            box-shadow: 10px 15px 25px 0px #D2C9C973;
+
+
+            .sc3fix {
+                z-index: 3;
+                position: absolute;
+                width: 1034px;
+                height: 246px;
+                display: flex;
+
+
+                p {
+                    width: 127px;
+                    height: 48px;
+                    position: relative;
+                    top: 99px;
+                    @include pthing($fw: 500, $fs: 20px)
+                }
+
+
+                hr {
+                    width: 1px;
+                    height: 166px;
+                    background-color: #2e2520;
+                    border: 1px solid #2e2520;
+                    align-self: center;
+                    position: relative;
+                    left: 28px;
+                }
+
+                .s3tform {
+                    display: grid;
+                    row-gap: 14px;
+                    position: relative;
+                    left: 67px;
+                    top: 40px;
+
+                    p {
+                        width: 267px;
+                        margin-bottom: 10px;
+                        position: static;
+                        @include pthing($fw: 500, $fs: 20px);
+                    }
+
+                    input {
+                        border: none;
+                        width: 212px;
+                        height: 22px;
+                        background-color: transparent;
+                        color: #2E2520;
+                        font-size: 16px;
+                        font-weight: 400;
+                        border-bottom: #000 solid 2px;
+                    }
+
+                    input::placeholder {
+                        color: #2E2520;
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+
+                form {
+                    button {
+                        width: 145px;
+                        height: 40px;
+                        font-size: 18px;
+                        font-weight: 400;
+                        color: #fff;
+                        background-color: #f3848c;
+                        border: none;
+                        border-radius: 25px;
+                        position: absolute;
+                        left: 657px;
+                        top: 103px;
+                        text-transform: capitalize;
+                    }
+
+                    button:hover {
+                        background-color: white;
+                        color: #f3848c;
+                        border: 1px #f3848c solid;
+                    }
+                }
+            }
+
+            img:first-child {
+                width: 200px;
+                height: 133px;
+                position: relative;
+                top: 97px;
+                left: 15px;
+            }
+
+            #sc3donuts {
+                position: absolute;
+                left: 581px;
+                height: 246px;
+                top: 0px;
+                z-index: 1;
+            }
+
+            #sc3bg {
+                position: absolute;
+                left: 23px;
+                top: 0px;
+                z-index: 2;
+                height: 247px;
+                width: 972px;
+            }
         }
     }
+}
+
+.sc4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 600px;
+
+    h2 {
+        @include h2thing();
+    }
+
+    p {
+        @include pthing();
+        margin-top: 27px;
+    }
+
     form {
-        p {
-            width: 67px !important;
+        display: grid;
+        row-gap: 16px;
+        position: relative;
+        top: 16px;
+
+        input {
+            border: none;
+            border-bottom: 1px solid #000;
+            width: 394px;
+            height: 22px;
+            background-color: transparent;
+        }
+
+        input::placeholder {
+            color: rgba($color: #000000, $alpha: 0.5);
+        }
+
+        button {
+            position: relative;
+            left: 124px;
+            top: 16px;
+            width: 145px;
+            height: 40px;
+            border: none;
+            border-radius: 25px;
+            background-color: #f3848c;
+            @include pthing($c: #fff);
+            text-transform: capitalize;
+        }
+
+        button:hover {
+            background-color: white;
+            color: #f3848c;
+            border: 1px #f3848c solid;
         }
     }
+
+    .sc4img {
+        position: relative;
+        top: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+
+        img {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+    }
+}
+
+.sdonuts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+        position: absolute;
+    }
+
+    img:nth-child(1) {
+        top: 1200px;
+        left: 1060px;
+    }
+
+    img:nth-child(2) {
+        top: 1435px;
+        left: 250px;
+    }
+
+    img:nth-child(3) {
+        top: 2370px;
+        left: 400px;
+    }
+
+    img:nth-child(4) {
+        top: 800px;
+        left: 1400px;
+    }
+
+    img:nth-child(5) {
+        top: 1800px;
+        left: 1450px;
+    }
+
+    img:nth-child(6) {
+        top: 620px;
+        left: 630px;
+    }
+
+    img:nth-child(7) {
+        top: 2000px;
+        left: 700px;
+    }
+
+    img:nth-child(8) {
+        top: 1500px;
+        left: 1300px;
+    }
+
+    img:nth-child(9) {
+        top: 2100px;
+        left: 1200px;
+    }
+
+    img:nth-child(10) {
+        top: 800px;
+        left: 1000px;
+    }
+
+    img:nth-child(11) {
+        top: 900px;
+        left: 300px;
+    }
+
+    img:nth-child(12) {
+        top: 1900px;
+        left: 300px;
+    }
+
+    img:nth-child(13) {
+        top: 1200px;
+        left: 600px;
+    }
+
+    img:nth-child(14) {
+        top: 1500px;
+        left: 600px;
+    }
+
+    img:nth-child(15) {
+        top: 2300px;
+        left: 1400px;
+    }
+
+    img:nth-child(16) {
+        top: 1300px;
+        left: 1400px;
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .sdonuts {
+        left: -300px !important;
+    }
+}
+
+.sc3adaptiveihatethis {
+    display: none;
+}
+
+.sdonutsadaptive {
+    display: none;
 }
