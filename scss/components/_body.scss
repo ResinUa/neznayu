@@ -118,7 +118,8 @@
         display: flex;
         gap: 32px;
         position: relative;
-        top: 28px;
+        left: -200px;
+        top: -80px;
     }
 
     .sc2p {
@@ -144,17 +145,43 @@
         }
     }
 
-    .active {
+    .adaptivefirst, .adaptivelast, .middle {
         display: flex;
+        position: absolute;
     }
 
-    .activeguy {
-        width: 394px !important;
-        height: 394px !important;
+    .adaptivefirst {
+        left: -340px;
     }
 
-    .activestar {
-        left: 130px !important;
+    .adaptivelast {
+        left: 460px;
+    }
+
+    .middle {
+        top: 100px;
+        left: 0;
+        
+        img {
+            width: 394px;
+            height: 394px;
+        }
+
+        .sc2text {
+            display: flex;
+            top: 500px;
+            left: -425px;
+            text-align: center;
+        }
+
+        p {
+            top: 0;
+            font-size: 18px;
+        }
+
+        .sc2pstars {
+            left: 130px;
+        }
     }
 
     .sc2pc {
@@ -169,27 +196,17 @@
         }
     }
 
-    .activething {
-        top: 143px;
-    }
-
-    .activetext {
-        display: block !important;
-    }
-
     .sc2text {
         display: none;
         width: 1248px;
-        text-align: center;
         position: absolute;
-        top: 650px;
-        left: -115px;
+        text-align: center;
         @include pthing();
     }
 
     .sc2button {
         position: relative;
-        top: 320px;
+        top: 620px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -212,7 +229,7 @@
 
 .sc3 {
     position: relative;
-    top: 500px;
+    top: 800px;
 
     .sc3c {
         display: flex;
@@ -354,7 +371,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    top: 600px;
+    top: 900px;
 
     h2 {
         @include h2thing();
@@ -421,7 +438,7 @@
 
 .sdonuts {
     position: absolute;
-    top: 0;
+    top: -200px;
     left: 0;
     z-index: -1;
 
@@ -524,4 +541,41 @@
 
 .sdonutsadaptive {
     display: none;
+}
+
+.cmodalwrap {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    top: 0;
+    left: 0;
+    .cmodal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+            color: white;
+            text-transform: capitalize;
+            font-size: 40px;
+            z-index: 101;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            z-index: 101;
+            font-size: 20px;
+            position: relative;
+            top: -100px;
+            left: 80px;
+        }
+        img {
+            position: absolute;
+        }
+    }
 }
