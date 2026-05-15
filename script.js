@@ -228,13 +228,17 @@ document.getElementById("aboba").addEventListener("click", () => {
 
 //модалка
 
-ismodalopen = false;
+var ismodalopen = false;
+const copenmodal = document.querySelectorAll('.copenmodal');
+const cmodalwrap = document.getElementById('cmodalwrap');
 
-document.querySelectorAll('copenmodal').addEventListener('click', () => {
+copenmodal.addEventListener('click', () => {
   if (ismodalopen == false) {
-    document.getElementsByClassName('cmodalwrap').style.display = 'flex';
+    cmodalwrap.style.display = 'flex';
     ismodalopen = true;
+    console.log(ismodalopen);
   } else {
-    document.getElementsByClassName('cmodalwrap').style.display = 'none';
+    cmodalwrap.style.display = 'none';
+    ismodalopen = false;
   }
 });
